@@ -5,6 +5,16 @@
 #define MAX_TAM_LOCAL 100
 #define MAX_TAM_ESTADO 20
 
+#define TEMPO_ESTIMADO_RUIM 3
+#define TEMPO_ESTIMADO_REGULAR 2
+#define TEMPO_ESTIMADO_BOM 1
+
+#define TEMPO_ESTIMADO_RH 2
+#define TEMPO_ESTIMADO_FINANCEIRO 3
+#define TEMPO_ESTIMADO_PD 1
+#define TEMPO_ESTIMADO_VENDAS 1
+#define TEMPO_ESTIMADO_MARKETING 1
+
 typedef struct Manutencao Manutencao;
 
 /**
@@ -15,19 +25,19 @@ typedef struct Manutencao Manutencao;
  * @param local Local da manutencao
  * @return Uma estrutura Manutencao inicializada.
  */
-Manutencao *criaManutencao(char *nome, char *estado, char *local);
+Manutencao *criaManutencao(char *nome, char *estado, char *local, char *setor);
 
 /**
  * @brief Lê da entrada padrão um ticket do tipo Manutencao.
  * @return Um chamado do tipo Manutencao.
  */
-Manutencao *lerManutencao();
+Manutencao *lerManutencao(char *setor);
 
 /**
  * @brief Calcula o tempo estimado para resolver um ticket do tipo Manutencao.
  * @param m Ticket do tipo Manutencao.
  */
-void setTempoEstimadoManutencao(Manutencao *m);
+void setTempoEstimadoManutencao(Manutencao *m, char *setor);
 
 /**
  * @brief Retorna o tempo estimado para resolver um ticket do tipo Manutencao.
