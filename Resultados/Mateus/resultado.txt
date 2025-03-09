@@ -14,12 +14,12 @@ Teste fila
   - Valgrinds corretos: 0 de 8
 Nota de Mateus para o teste fila: 0
 Teste ticket
-  - Resultados corretos: 0 de 8
+  - Resultados corretos: 8 de 8
   - Valgrinds corretos: 8 de 8
-Nota de Mateus para o teste ticket: 0
+Nota de Mateus para o teste ticket: 1.00
 Teste software
-  - Resultados corretos: 0 de 8
+  - Resultados corretos: 8 de 8
   - Valgrinds corretos: 8 de 8
-Nota de Mateus para o teste software: 0
-Nota de Mateus: 0+(0)+(0)+(0)+(0)+(0)
-Nota de Mateus: 0
+Nota de Mateus para o teste software: .50
+Nota de Mateus: 0+(0)+(1.00)+(0)+(0)+(.50)
+Nota de Mateus: 1.50

@@ -4,8 +4,8 @@
 #include <string.h>
 
 struct Ticket {
-  char *id;
-  char *cpfSol;
+  char id[MAX_TAM_ID];
+  char cpfSol[MAX_TAM_CPF];
   void *dado;
   char status;
   func_ptr_tempoEstimado getTempo;
@@ -20,6 +20,10 @@ Ticket *criaTicket(char *cpfSol, void *dado, func_ptr_tempoEstimado getTempo,
   Ticket *t = (Ticket *)calloc(1, sizeof(Ticket));
   t->cpfSol = (char *)calloc(MAX_TAM_CPF, sizeof(char));
   t->id = (char *)calloc(MAX_TAM_ID, sizeof(char));
+
+  if (!t){
+    return NULL;
+  }
 
   strcpy(t->cpfSol, cpfSol);
   t->dado = dado;
@@ -45,10 +49,15 @@ char getTipoTicket(Ticket *t) { return t->getTipo(); };
 char getStatusTicket(Ticket *t) { return t->status; };
 
 void desalocaTicket(Ticket *doc) {
+<<<<<<< HEAD
   doc->desaloca(doc->dado);
   free(doc->cpfSol);
   free(doc->id);
   free(doc);
+=======
+    doc->desaloca(doc->dado);
+    free(doc);
+>>>>>>> eecf589534b0f63b8c9ab791262a628c9bc9f002
 };
 
 void notificaTicket(Ticket *doc) {
@@ -56,7 +65,11 @@ void notificaTicket(Ticket *doc) {
   printf("- ID: %s\n", doc->id);
   printf("- Usuario solicitante: %s\n", doc->cpfSol);
 
+<<<<<<< HEAD
   doc->notifica(doc);
+=======
+  doc->notifica(doc->dado);
+>>>>>>> eecf589534b0f63b8c9ab791262a628c9bc9f002
 
   printf("- Status: ");
   if (doc->status == 'A') {
