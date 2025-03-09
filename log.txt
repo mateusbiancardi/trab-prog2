@@ -60,6 +60,18 @@ COPIANDO OS ARQUIVOS PARA A PASTA DE RESULTADO DO ALUNO:
  - Removendo o software.o do professor da pasta Resultados/Mateus/software
  - Copiando o Respostas/Mateus/software.c do aluno para a pasta Resultados/Mateus/software
  - Copiando Arquivos Extras do Aluno:
+ - Copiando Respostas/Mateus/manutencao.c para Resultados/Mateus/main
+ - Copiando Respostas/Mateus/manutencao.c para Resultados/Mateus/completo
+ - Copiando Respostas/Mateus/tecnico.c para Resultados/Mateus/main
+ - Copiando Respostas/Mateus/tecnico.c para Resultados/Mateus/completo
+ - Copiando Respostas/Mateus/usuario.c para Resultados/Mateus/main
+ - Copiando Respostas/Mateus/usuario.c para Resultados/Mateus/completo
+ - Copiando Respostas/Mateus/manutencao.h para Resultados/Mateus/main
+ - Copiando Respostas/Mateus/manutencao.h para Resultados/Mateus/completo
+ - Copiando Respostas/Mateus/tecnico.h para Resultados/Mateus/main
+ - Copiando Respostas/Mateus/tecnico.h para Resultados/Mateus/completo
+ - Copiando Respostas/Mateus/usuario.h para Resultados/Mateus/main
+ - Copiando Respostas/Mateus/usuario.h para Resultados/Mateus/completo
  - Arquivos copiados: ok!
 
 COMPILANDO OS ARQUIVOS NA PASTA DE RESULTADO DO ALUNO:

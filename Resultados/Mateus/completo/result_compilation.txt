@@ -1,0 +1,4 @@
+software.c: In function ‘lerSoftware’:
+software.c:32:7: warning: unused variable ‘tempoEstimado’ [-Wunused-variable]
+   32 |   int tempoEstimado;
+      |       ^~~~~~~~~~~~~

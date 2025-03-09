@@ -25,27 +25,28 @@ Software *criaSoftware(char *nome, char *categoria, int impacto, char *motivo) {
 };
 
 Software *lerSoftware() {
-  // char nome[MAX_TAM_NOME_SOFTWARE], categoria[MAX_TAM_CAT],
-  //     motivo[MAX_TAM_MOTIVO];
-  // int impacto;
+  char nome[MAX_TAM_NOME_SOFTWARE];
+  char categoria[MAX_TAM_CAT];
+  int impacto;
+  char motivo[MAX_TAM_MOTIVO];
+  int tempoEstimado;
 
-  Software *s = (Software *)calloc(1, sizeof(Software));
+  scanf("%[^\n]\n", nome);
+  scanf("%[^\n]\n", categoria);
+  scanf("%d\n", &impacto);
+  scanf("%[^\n]\n", motivo);
 
-  scanf("%[^\n]\n", s->nome);
-  scanf("%[^\n]\n", s->categoria);
-  scanf("%d\n", &s->impacto);
-  scanf("%[^\n]\n", s->motivo);
+  Software *s = criaSoftware(nome, categoria, impacto, motivo);
 
-  // Software *s = criaSoftware(nome, categoria, impacto, motivo);
   return s;
 }
 
 void setTempoEstimadoSoftware(Software *s) {
-  int horasCat = 1;
+  int horasCat = TEMPO_ESTIMADO_DUVIDA;
   if (strcmp(s->categoria, "BUG") == 0) {
-    horasCat = 3;
+    horasCat = TEMPO_ESTIMADO_BUG;
   } else if (strcmp(s->categoria, "OUTROS") == 0) {
-    horasCat = 2;
+    horasCat = TEMPO_ESTIMADO_OUTROS;
   }
 
   s->tempoEstimado = horasCat + s->impacto;
@@ -75,15 +76,3 @@ void notificaSoftware(void *dado) {
   printf("- Motivo: %s\n", s->motivo);
   printf("- Tempo estimado: %dh\n", getTempoEstimadoSoftware(s));
 };
-
-// ---------TICKET-----------
-// - ID: Tick-4
-// - Usuario solicitante: 524.456.852-98
-// - Tipo: Software
-// - Nome do software: EXCEL
-// - Categoria: DUVIDA
-// - Nível do impacto: 2
-// - Motivo: NAO CONSIGO ORDENAR COLUNA DE DADOS
-// - Tempo estimado: 3h
-// - Status: Finalizado
-// -------------------------
