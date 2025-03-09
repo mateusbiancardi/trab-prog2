@@ -18,8 +18,6 @@ Ticket *criaTicket(char *cpfSol, void *dado, func_ptr_tempoEstimado getTempo,
                    func_ptr_tipo getTipo, func_ptr_notifica notifica,
                    func_ptr_desaloca desaloca) {
   Ticket *t = (Ticket *)calloc(1, sizeof(Ticket));
-  t->cpfSol = (char *)calloc(MAX_TAM_CPF, sizeof(char));
-  t->id = (char *)calloc(MAX_TAM_ID, sizeof(char));
 
   if (!t){
     return NULL;
@@ -49,15 +47,8 @@ char getTipoTicket(Ticket *t) { return t->getTipo(); };
 char getStatusTicket(Ticket *t) { return t->status; };
 
 void desalocaTicket(Ticket *doc) {
-<<<<<<< HEAD
-  doc->desaloca(doc->dado);
-  free(doc->cpfSol);
-  free(doc->id);
-  free(doc);
-=======
     doc->desaloca(doc->dado);
     free(doc);
->>>>>>> eecf589534b0f63b8c9ab791262a628c9bc9f002
 };
 
 void notificaTicket(Ticket *doc) {
@@ -65,11 +56,7 @@ void notificaTicket(Ticket *doc) {
   printf("- ID: %s\n", doc->id);
   printf("- Usuario solicitante: %s\n", doc->cpfSol);
 
-<<<<<<< HEAD
-  doc->notifica(doc);
-=======
   doc->notifica(doc->dado);
->>>>>>> eecf589534b0f63b8c9ab791262a628c9bc9f002
 
   printf("- Status: ");
   if (doc->status == 'A') {
