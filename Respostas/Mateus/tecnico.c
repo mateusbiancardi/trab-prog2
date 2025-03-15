@@ -1,4 +1,5 @@
 #include "tecnico.h"
+#include "data.h"
 #include "ticket.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +8,7 @@
 struct Tecnico {
   char nome[MAX_TAM_NOME];
   char cpf[MAX_TAM_CPF];
-  char dataNasc[15];
+  Data *dataNasc;
   char telefone[20];
   char genero[12];
   char atuacao[12];
@@ -19,7 +20,7 @@ struct Tecnico {
   int qntdTickets;
 };
 
-Tecnico *criaTecnico(char *nome, char *cpf, char *dataNasc, char *telefone,
+Tecnico *criaTecnico(char *nome, char *cpf, Data *dataNasc, char *telefone,
                      char *genero, char *atuacao, float salario,
                      int disponibilidade) {
   Tecnico *t = (Tecnico *)calloc(1, sizeof(Tecnico));
@@ -27,7 +28,7 @@ Tecnico *criaTecnico(char *nome, char *cpf, char *dataNasc, char *telefone,
 
   strcpy(t->nome, nome);
   strcpy(t->cpf, cpf);
-  strcpy(t->dataNasc, dataNasc);
+  t->dataNasc = dataNasc;
   strcpy(t->telefone, telefone);
   strcpy(t->genero, genero);
   strcpy(t->atuacao, atuacao);
@@ -42,7 +43,7 @@ Tecnico *criaTecnico(char *nome, char *cpf, char *dataNasc, char *telefone,
 Tecnico *leTecnico() {
   char nome[MAX_TAM_NOME];
   char cpf[MAX_TAM_CPF];
-  char dataNasc[15];
+  Data *dataNasc;
   char telefone[20];
   char genero[12];
   char atuacao[12];
@@ -51,7 +52,7 @@ Tecnico *leTecnico() {
 
   scanf(" %[^\n]\n", nome);
   scanf(" %[^\n]\n", cpf);
-  scanf(" %[^\n]\n", dataNasc);
+  dataNasc = leData();
   scanf(" %[^\n]\n", telefone);
   scanf(" %[^\n]\n", genero);
   scanf(" %[^\n]\n", atuacao);
@@ -64,7 +65,9 @@ Tecnico *leTecnico() {
   return t;
 };
 
-int comparaCPF(Tecnico *t, Tecnico **tecnicos, int qntdTecnicos) {
+int comparaCPFtecnico(Tecnico *t, void **dados, int qntdTecnicos) {
+  Tecnico **tecnicos = (Tecnico **)dados;
+
   for (int i = 0; i < qntdTecnicos; i++) {
     if (strcmp(t->cpf, tecnicos[i]->cpf) == 0) {
       return 1;
@@ -79,7 +82,9 @@ void setQntdTicketsTecnico(Tecnico *t, int qntdTickets) {
 
 int getQntdTicketsTecnico(Tecnico *t) { return t->qntdTickets; };
 
-void desalocaTecnico(Tecnico *t) {
+void desalocaTecnico(void *dado) {
+  Tecnico *t = (Tecnico *)dado;
+
   for (int i = 0; i < t->qntdTickets; i++) {
     desalocaTicket(t->tickets[i]);
   }
@@ -87,11 +92,14 @@ void desalocaTecnico(Tecnico *t) {
   free(t);
 };
 
-void notificaTecnico(Tecnico *t) {
+void notificaTecnico(void *dado) {
+  Tecnico *t = (Tecnico *)dado;
+
   printf("--------------------\n");
   printf("- Nome: %s\n", t->nome);
   printf("- CPF: %s\n", t->cpf);
-  printf("- Data de Nascimento: %s\n", t->dataNasc);
+  printf("- Data de Nascimento: ");
+  imprimeData(t->dataNasc);
   printf("- Telefone: %s\n", t->telefone);
   printf("- Genero: %s\n", t->genero);
   printf("- Area de Atuacao: %s\n", t->atuacao);

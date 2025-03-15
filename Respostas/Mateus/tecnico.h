@@ -1,6 +1,7 @@
 #ifndef _TECNICO_H
 #define _TECNICO_H
 
+#include "data.h"
 #define MAX_TAM_NOME 100
 #define MAX_TAM_CPF 15
 
@@ -31,7 +32,7 @@ typedef struct Tecnico Tecnico;
  * @param tempo Tempo de disponibilidade
  * @return Ponteiro para o novo técnico criado.
  */
-Tecnico *criaTecnico(char *nome, char *cpf, char *dataNasc, char *telefone,
+Tecnico *criaTecnico(char *nome, char *cpf, Data *dataNasc, char *telefone,
                      char *genero, char *atuacao, float salario,
                      int disponibilidade);
 
@@ -46,11 +47,11 @@ Tecnico *leTecnico();
  * @brief Compara o CPF de um técnico com os CPFs de outros técnicos.
  *
  * @param t Ponteiro para o técnico a ser comparado.
- * @param tecnicos Array de ponteiros para técnicos.
+ * @param dados Array de ponteiros de void.
  * @param qntdTecnicos Quantidade de técnicos no array.
  * @return 1 se o CPF for igual a algum dos técnicos no array, 0 caso contrário.
  */
-int comparaCPF(Tecnico *t, Tecnico **tecnicos, int qntdTecnicos);
+int comparaCPFtecnico(Tecnico *t, void **dados, int qntdTecnicos);
 
 /**
  * @brief Define a quantidade de tickets de um técnico.
@@ -73,13 +74,13 @@ int getQntdTicketsTecnico(Tecnico *t);
  *
  * @param t Ponteiro para o técnico a ser desalocado.
  */
-void desalocaTecnico(Tecnico *t);
+void desalocaTecnico(void *dado);
 
 /**
  * @brief Notifica um técnico.
  *
  * @param t Ponteiro para o técnico a ser notificado.
  */
-void notificaTecnico(Tecnico *t);
+void notificaTecnico(void *dado);
 
 #endif

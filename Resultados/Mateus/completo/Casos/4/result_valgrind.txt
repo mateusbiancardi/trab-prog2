@@ -1,41 +1,38 @@
-==6563== Memcheck, a memory error detector
-==6563== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
-==6563== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
-==6563== Command: Resultados/Mateus/completo/prog Resultados/Mateus/completo/Casos/4
-==6563== Parent PID: 6562
-==6563== 
-==6563== Invalid read of size 1
-==6563==    at 0x4850427: __strcmp_sse42 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6563==    by 0x10A13C: comparaCPF (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
-==6563==    by 0x10A0B7: leUsuario (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
-==6563==    by 0x10958D: main (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
-==6563==  Address 0x64 is not stack'd, malloc'd or (recently) free'd
-==6563== 
-==6563== 
-==6563== Process terminating with default action of signal 11 (SIGSEGV)
-==6563==  Access not within mapped region at address 0x64
-==6563==    at 0x4850427: __strcmp_sse42 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==6563==    by 0x10A13C: comparaCPF (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
-==6563==    by 0x10A0B7: leUsuario (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
-==6563==    by 0x10958D: main (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
-==6563==  If you believe this happened as a result of a stack
-==6563==  overflow in your program's main thread (unlikely but
-==6563==  possible), you can try to increase the size of the
-==6563==  main thread stack using the --main-stacksize= flag.
-==6563==  The main thread stack size used in this run was 8388608.
-==6563== 
-==6563== HEAP SUMMARY:
-==6563==     in use at exit: 4,316 bytes in 3 blocks
-==6563==   total heap usage: 3 allocs, 0 frees, 4,316 bytes allocated
-==6563== 
-==6563== LEAK SUMMARY:
-==6563==    definitely lost: 0 bytes in 0 blocks
-==6563==    indirectly lost: 0 bytes in 0 blocks
-==6563==      possibly lost: 0 bytes in 0 blocks
-==6563==    still reachable: 4,316 bytes in 3 blocks
-==6563==         suppressed: 0 bytes in 0 blocks
-==6563== Reachable blocks (those to which a pointer was found) are not shown.
-==6563== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==6563== 
-==6563== For lists of detected and suppressed errors, rerun with: -s
-==6563== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==57087== Memcheck, a memory error detector
+==57087== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==57087== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==57087== Command: Resultados/Mateus/completo/prog Resultados/Mateus/completo/Casos/4
+==57087== Parent PID: 57086
+==57087== 
+==57087== Conditional jump or move depends on uninitialised value(s)
+==57087==    at 0x109AC2: main (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
+==57087== 
+==57087== 
+==57087== HEAP SUMMARY:
+==57087==     in use at exit: 168 bytes in 14 blocks
+==57087==   total heap usage: 50 allocs, 36 frees, 11,504 bytes allocated
+==57087== 
+==57087== 48 bytes in 4 blocks are definitely lost in loss record 1 of 2
+==57087==    at 0x484D953: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==57087==    by 0x109499: criaData (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
+==57087==    by 0x109510: leData (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
+==57087==    by 0x10A583: leTecnico (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
+==57087==    by 0x10991E: main (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
+==57087== 
+==57087== 120 bytes in 10 blocks are definitely lost in loss record 2 of 2
+==57087==    at 0x484D953: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==57087==    by 0x109499: criaData (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
+==57087==    by 0x109510: leData (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
+==57087==    by 0x10AC8F: leUsuario (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
+==57087==    by 0x109993: main (in /home/mateus/Documents/trabalho/trab-prog2/Resultados/Mateus/completo/prog)
+==57087== 
+==57087== LEAK SUMMARY:
+==57087==    definitely lost: 168 bytes in 14 blocks
+==57087==    indirectly lost: 0 bytes in 0 blocks
+==57087==      possibly lost: 0 bytes in 0 blocks
+==57087==    still reachable: 0 bytes in 0 blocks
+==57087==         suppressed: 0 bytes in 0 blocks
+==57087== 
+==57087== Use --track-origins=yes to see where uninitialised values come from
+==57087== For lists of detected and suppressed errors, rerun with: -s
+==57087== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)

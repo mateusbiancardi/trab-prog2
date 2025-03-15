@@ -1,6 +1,7 @@
 #ifndef _USUARIO_H
 #define _USUARIO_H
 
+#include "data.h"
 #define MAX_TAM_NOME 100
 #define MAX_TAM_CPF 15
 
@@ -17,7 +18,7 @@ typedef struct Usuario Usuario;
  * @param setor Setor do usuário
  * @return Uma estrutura Usuario inicializada.
  */
-Usuario *criaUsuario(char *nome, char *cpf, char *dataNasc, char *telefone,
+Usuario *criaUsuario(char *nome, char *cpf, Data *dataNasc, char *telefone,
                      char *genero, char *setor);
 
 /**
@@ -44,7 +45,7 @@ Usuario *leUsuario();
  * @return Retorna 1 se o CPF do usuário fornecido for encontrado na lista,
  * caso contrário, retorna 0.
  */
-int comparaCPF(Usuario *u, Usuario **usuarios, int qntdUsuarios);
+int comparaCPFusuario(Usuario *u, void **dados, int qntdUsuarios);
 
 /**
  * @brief Define a quantidade de tickets para um usuário.
@@ -62,13 +63,13 @@ void setQntdTicketsUsuario(Usuario *u, int qntdTickets);
  *
  * @param u Ponteiro para o objeto Usuario a ser desalocado.
  */
-void desalocaUsuario(Usuario *u);
+void desalocaUsuario(void *dado);
 
 /**
  * @brief Notifica (imprime) um Usuario.
  * @param u Usuario a ser notificado.
  */
-void notificaUsuario(Usuario *u);
+void notificaUsuario(void *dado);
 
 /**
  * @brief Obtém a quantidade de tickets de um usuário.

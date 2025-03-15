@@ -59,25 +59,9 @@ int getQtdTicketsPorStatusNaFila(Fila *f, char status) {
 
 Ticket *getTicketNaFila(Fila *f, int i) { return f->tickets[i]; };
 
-/**
- * @brief A função notificaFila imprime todos os tickets na Fila f
- * @param f  Fila inicializada contendo zero ou mais tickets.
- */
 void notificaFila(Fila *f) {
   // printf("----- FILA DE TICKETS -----\n");
   for (int i = 0; i < f->qtd; i++) {
     notificaTicket(f->tickets[i]);
   }
 };
-
-// ----- FILA DE TICKETS -----
-// ---------TICKET-----------
-// - ID: Tick-1
-// - Usuario solicitante: 255.942.213-22
-// - Tipo: Outros
-// - Descricao: RECOLHER COBRA QUE APARECEU NA ENTRADA DO PREDIO
-// - Local: PASSARELA DA INFORMATICA
-// - Nivel de Dificuldade: 5
-// - Tempo Estimado: 5h
-// - Status: Finalizado
-// -------------------------

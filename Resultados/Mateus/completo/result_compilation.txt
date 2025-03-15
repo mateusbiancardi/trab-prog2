@@ -1,3 +1,7 @@
+data.c: In function ‘calcularDiffAnosData’:
+data.c:37:31: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+   37 |       fim->mes == inicio->mes && fim->dia < inicio->dia) {
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
 manutencao.c: In function ‘setTempoEstimadoManutencao’:
 manutencao.c:40:17: warning: variable ‘numEstado’ set but not used [-Wunused-but-set-variable]
    40 |   int numSetor, numEstado;
@@ -5,6 +9,18 @@ manutencao.c:40:17: warning: variable ‘numEstado’ set but not used [-Wunused
 manutencao.c:40:7: warning: variable ‘numSetor’ set but not used [-Wunused-but-set-variable]
    40 |   int numSetor, numEstado;
       |       ^~~~~~~~
+In file included from outros.c:2:
+manutencao.h:5: warning: "MAX_TAM_LOCAL" redefined
+    5 | #define MAX_TAM_LOCAL 100
+      | 
+In file included from outros.c:1:
+outros.h:5: note: this is the location of the previous definition
+    5 | #define MAX_TAM_LOCAL 25
+      | 
+outros.c: In function ‘lerOutros’:
+outros.c:29:7: warning: unused variable ‘tempoEstimado’ [-Wunused-variable]
+   29 |   int tempoEstimado;
+      |       ^~~~~~~~~~~~~
 software.c: In function ‘lerSoftware’:
 software.c:32:7: warning: unused variable ‘tempoEstimado’ [-Wunused-variable]
    32 |   int tempoEstimado;
