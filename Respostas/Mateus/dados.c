@@ -36,3 +36,9 @@ void liberaDados(Dados *v, void (*destroy)(void *)) {
   free(v->dado);
   free(v);
 };
+
+void printaDados(Dados *v, void (*printa)(void *)) {
+  for (int i = 0; i < v->tam; i++) {
+    printa(v->dado[i]);
+  }
+};
