@@ -28,7 +28,7 @@ Usuario *criaUsuario(char *nome, char *cpf, char *dataNasc, char *telefone,
   return u;
 };
 
-Usuario *leUsuario(Usuario **usuarios, int qntdUsuarios) {
+Usuario *leUsuario() {
   char nome[MAX_TAM_NOME];
   char cpf[MAX_TAM_CPF];
   char dataNasc[15];
@@ -45,11 +45,6 @@ Usuario *leUsuario(Usuario **usuarios, int qntdUsuarios) {
 
   Usuario *u = criaUsuario(nome, cpf, dataNasc, telefone, genero, setor);
 
-  if (comparaCPF(u, usuarios, qntdUsuarios)) {
-    free(u);
-    return NULL;
-  }
-
   return u;
 };
 
@@ -65,6 +60,8 @@ int comparaCPF(Usuario *u, Usuario **usuarios, int qntdUsuarios) {
 void setQntdTicketsUsuario(Usuario *u, int qntdTickets) {
   u->qntdTickets = qntdTickets;
 };
+
+int getQntdTicketsUsuario(Usuario *u) { return u->qntdTickets; };
 
 void desalocaUsuario(Usuario *u) { free(u); };
 

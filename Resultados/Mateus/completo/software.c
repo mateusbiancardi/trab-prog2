@@ -30,7 +30,6 @@ Software *lerSoftware() {
   int impacto;
   char motivo[MAX_TAM_MOTIVO];
   int tempoEstimado;
-  // Software *s = (Software *)calloc(1, sizeof(Software));
 
   scanf("%[^\n]\n", nome);
   scanf("%[^\n]\n", categoria);

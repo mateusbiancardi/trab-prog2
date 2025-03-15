@@ -1,0 +1,7 @@
+manutencao.c: In function ‘setTempoEstimadoManutencao’:
+manutencao.c:40:17: warning: variable ‘numEstado’ set but not used [-Wunused-but-set-variable]
+   40 |   int numSetor, numEstado;
+      |                 ^~~~~~~~~
+manutencao.c:40:7: warning: variable ‘numSetor’ set but not used [-Wunused-but-set-variable]
+   40 |   int numSetor, numEstado;
+      |       ^~~~~~~~

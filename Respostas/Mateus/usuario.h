@@ -30,7 +30,7 @@ Usuario *criaUsuario(char *nome, char *cpf, char *dataNasc, char *telefone,
  * @param qntdUsuarios O número de usuários no array.
  * @return Um ponteiro para o usuário lido da lista.
  */
-Usuario *leUsuario(Usuario **usuarios, int qntdUsuarios);
+Usuario *leUsuario();
 
 /**
  * @brief Compara o CPF de um usuário com uma lista de usuários.
@@ -69,5 +69,13 @@ void desalocaUsuario(Usuario *u);
  * @param u Usuario a ser notificado.
  */
 void notificaUsuario(Usuario *u);
+
+/**
+ * @brief Obtém a quantidade de tickets de um usuário.
+ *
+ * @param u Ponteiro para o usuário.
+ * @return int Quantidade de tickets do usuário.
+ */
+int getQntdTicketsUsuario(Usuario *u);
 
 #endif
