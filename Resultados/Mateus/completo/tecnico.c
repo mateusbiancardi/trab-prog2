@@ -89,6 +89,7 @@ void desalocaTecnico(void *dado) {
     desalocaTicket(t->tickets[i]);
   }
   free(t->tickets);
+  liberaData(t->dataNasc);
   free(t);
 };
 

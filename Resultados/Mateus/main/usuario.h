@@ -33,6 +33,8 @@ Usuario *criaUsuario(char *nome, char *cpf, Data *dataNasc, char *telefone,
  */
 Usuario *leUsuario();
 
+Usuario *buscaCPFusuario(char *cpf, void **dados, int qntdUsuarios);
+
 /**
  * @brief Compara o CPF de um usuário com uma lista de usuários.
  *
@@ -70,6 +72,8 @@ void desalocaUsuario(void *dado);
  * @param u Usuario a ser notificado.
  */
 void notificaUsuario(void *dado);
+
+char *getSetor(Usuario *u);
 
 /**
  * @brief Obtém a quantidade de tickets de um usuário.

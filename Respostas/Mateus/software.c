@@ -29,7 +29,6 @@ Software *lerSoftware() {
   char categoria[MAX_TAM_CAT];
   int impacto;
   char motivo[MAX_TAM_MOTIVO];
-  int tempoEstimado;
 
   scanf("%[^\n]\n", nome);
   scanf("%[^\n]\n", categoria);

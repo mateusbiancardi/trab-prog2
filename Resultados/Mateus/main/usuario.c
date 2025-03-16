@@ -49,6 +49,17 @@ Usuario *leUsuario() {
   return u;
 };
 
+Usuario *buscaCPFusuario(char *cpf, void **dados, int qntdUsuarios) {
+  Usuario **usuarios = (Usuario **)dados;
+
+  for (int i = 0; i < qntdUsuarios; i++) {
+    if (strcmp(cpf, usuarios[i]->cpf) == 0) {
+      return usuarios[i];
+    }
+  }
+  return NULL;
+};
+
 int comparaCPFusuario(Usuario *u, void **dados, int qntdUsuarios) {
   Usuario **usuarios = (Usuario **)dados;
 
@@ -60,6 +71,12 @@ int comparaCPFusuario(Usuario *u, void **dados, int qntdUsuarios) {
   return 0;
 };
 
+char *getSetor(Usuario *u) {
+  if (u == NULL)
+    return NULL;
+  return u->setor;
+};
+
 void setQntdTicketsUsuario(Usuario *u, int qntdTickets) {
   u->qntdTickets = qntdTickets;
 };
@@ -68,6 +85,7 @@ int getQntdTicketsUsuario(Usuario *u) { return u->qntdTickets; };
 
 void desalocaUsuario(void *dado) {
   Usuario *u = (Usuario *)dado;
+  liberaData(u->dataNasc);
   free(u);
 };
 

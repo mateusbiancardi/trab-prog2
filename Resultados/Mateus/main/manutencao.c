@@ -27,9 +27,9 @@ Manutencao *lerManutencao(char *setor) {
   char estado[MAX_TAM_ESTADO];
   char local[MAX_TAM_LOCAL];
 
-  scanf("%[^\n]\n", nome);
-  scanf("%[^\n]\n", estado);
-  scanf("%[^\n]\n", local);
+  scanf(" %[^\n]\n", nome);
+  scanf(" %[^\n]\n", estado);
+  scanf(" %[^\n]\n", local);
 
   Manutencao *m = criaManutencao(nome, estado, local, setor);
 
@@ -37,27 +37,32 @@ Manutencao *lerManutencao(char *setor) {
 };
 
 void setTempoEstimadoManutencao(Manutencao *s, char *setor) {
-  int numSetor, numEstado;
+  int numSetor = 0, numEstado = 0;
+  if (setor != NULL) {
 
-  if (strcmp(s->estado, "RUIM") == 0) {
-    numEstado = TEMPO_ESTIMADO_RUIM;
-  } else if (strcmp(s->estado, "REGULAR") == 0) {
-    numEstado = TEMPO_ESTIMADO_REGULAR;
-  } else if (strcmp(s->estado, "BOM") == 0) {
-    numEstado = TEMPO_ESTIMADO_BOM;
-  }
+    if (strcmp(s->estado, "RUIM") == 0) {
+      numEstado = TEMPO_ESTIMADO_RUIM;
+    } else if (strcmp(s->estado, "REGULAR") == 0) {
+      numEstado = TEMPO_ESTIMADO_REGULAR;
+    } else if (strcmp(s->estado, "BOM") == 0) {
+      numEstado = TEMPO_ESTIMADO_BOM;
+    }
 
-  if (strcmp(setor, "RH") == 0) {
-    numSetor = TEMPO_ESTIMADO_RH;
-  } else if (strcmp(setor, "FINANCEIRO") == 0) {
-    numSetor = TEMPO_ESTIMADO_FINANCEIRO;
-  } else if (strcmp(setor, "P&D") == 0) {
-    numSetor = TEMPO_ESTIMADO_PD;
-  } else if (strcmp(setor, "VENDAS") == 0) {
-    numSetor = TEMPO_ESTIMADO_VENDAS;
-  } else if (strcmp(setor, "MARKETING") == 0) {
-    numSetor = TEMPO_ESTIMADO_MARKETING;
+    // numEstado = TEMPO_ESTIMADO_BOM;
+    // numSetor = TEMPO_ESTIMADO_BOM;
+    if (strcmp(setor, "RH") == 0) {
+      numSetor = TEMPO_ESTIMADO_RH;
+    } else if (strcmp(setor, "FINANCEIRO") == 0) {
+      numSetor = TEMPO_ESTIMADO_FINANCEIRO;
+    } else if (strcmp(setor, "P&D") == 0) {
+      numSetor = TEMPO_ESTIMADO_PD;
+    } else if (strcmp(setor, "VENDAS") == 0) {
+      numSetor = TEMPO_ESTIMADO_VENDAS;
+    } else if (strcmp(setor, "MARKETING") == 0) {
+      numSetor = TEMPO_ESTIMADO_MARKETING;
+    }
   }
+  s->tempoEstimado = numEstado * numSetor;
 };
 
 int getTempoEstimadoManutencao(void *dado) {

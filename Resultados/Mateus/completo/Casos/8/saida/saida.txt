@@ -7,8 +7,8 @@
 - Genero: MASCULINO
 - Area de Atuacao: GERAL
 - Salario: 4000.00
-- Disponibilidade: 27h
-- Tempo Trabalhado: 3h
+- Disponibilidade: 30h
+- Tempo Trabalhado: 0h
 --------------------
 - Nome: AHRI COSTA
 - CPF: 234.567.890-12
@@ -17,8 +17,8 @@
 - Genero: FEMININO
 - Area de Atuacao: GERAL
 - Salario: 4800.00
-- Disponibilidade: 22h
-- Tempo Trabalhado: 3h
+- Disponibilidade: 25h
+- Tempo Trabalhado: 0h
 --------------------
 - Nome: YASUO FERREIRA
 - CPF: 345.678.901-23
@@ -27,8 +27,8 @@
 - Genero: MASCULINO
 - Area de Atuacao: TI
 - Salario: 5200.00
-- Disponibilidade: 33h
-- Tempo Trabalhado: 7h
+- Disponibilidade: 40h
+- Tempo Trabalhado: 0h
 --------------------
 - Nome: GAREN SANTOS
 - CPF: 901.234.567-89
@@ -37,8 +37,8 @@
 - Genero: MASCULINO
 - Area de Atuacao: TI
 - Salario: 4300.00
-- Disponibilidade: 14h
-- Tempo Trabalhado: 8h
+- Disponibilidade: 22h
+- Tempo Trabalhado: 0h
 ----------------------------
 
 ----- FILA DE TICKETS -----
@@ -50,9 +50,8 @@
 - Local: CORREDOR PRINCIPAL
 - Nivel de Dificuldade: 3
 - Tempo Estimado: 3h
-- Status: Finalizado
+- Status: Aberto
 -------------------------
-
 ---------TICKET-----------
 - ID: Tick-2
 - Usuario solicitante: 468.357.912-35
@@ -61,9 +60,8 @@
 - Estado de conservacao: RUIM
 - Local: SALA 15 BLOCO A
 - Tempo estimado: 3h
-- Status: Finalizado
+- Status: Aberto
 -------------------------
-
 ---------TICKET-----------
 - ID: Tick-3
 - Usuario solicitante: 791.680.245-68
@@ -73,9 +71,8 @@
 - Nível do impacto: 4
 - Motivo: EMAILS NAO ESTAO SENDO ENVIADOS
 - Tempo estimado: 7h
-- Status: Finalizado
+- Status: Aberto
 -------------------------
-
 ---------TICKET-----------
 - ID: Tick-4
 - Usuario solicitante: 246.135.790-13
@@ -85,9 +82,8 @@
 - Nível do impacto: 5
 - Motivo: SISTEMA DE PONTO MOSTRANDO A HORA ERRADA
 - Tempo estimado: 8h
-- Status: Finalizado
+- Status: Aberto
 -------------------------
-
 ---------TICKET-----------
 - ID: Tick-5
 - Usuario solicitante: 680.579.134-57
@@ -98,17 +94,5 @@
 - Tempo Estimado: 32h
 - Status: Aberto
 -------------------------
-
----------------------------
-
------ RELATORIO GERAL -----
-- Qtd tickets: 5
-- Qtd tickets (A): 1
-- Qtd tickets (F): 4
-- Qtd usuarios: 8
-- Md idade usuarios: 36
-- Qtd tecnicos: 4
-- Md idade tecnicos: 39
-- Md trabalho tecnicos: 5
 ---------------------------
 
