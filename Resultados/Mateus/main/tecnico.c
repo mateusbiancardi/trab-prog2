@@ -183,3 +183,33 @@ void distribuiTicketTecnico(Tecnico **tecnicos, int qntdTecnicos,
     }
   }
 };
+
+int comparaRankingTecnico(const void *tecnico1, const void *tecnico2) {
+  Tecnico *t1 = *(Tecnico **)tecnico1;
+  Tecnico *t2 = *(Tecnico **)tecnico2;
+
+  if (getTempoTrabalhado(t1) < getTempoTrabalhado(t2)) {
+    return 1;
+  } else if (getTempoTrabalhado(t1) > getTempoTrabalhado(t2)) {
+    return -1;
+  }
+
+  return strcmp(t1->nome, t2->nome);
+};
+
+void notificaRankingTecnico(Tecnico **tecnicos, int qntdTecnicos) {
+  Tecnico **tecnicosSorted =
+      (Tecnico **)calloc(qntdTecnicos, sizeof(Tecnico *));
+
+  for (int i = 0; i < qntdTecnicos; i++) {
+    tecnicosSorted[i] = tecnicos[i];
+  }
+
+  qsort(tecnicosSorted, qntdTecnicos, sizeof(Tecnico *), comparaRankingTecnico);
+
+  for (int i = 0; i < qntdTecnicos; i++) {
+    notificaTecnico(tecnicosSorted[i]);
+  }
+
+  free(tecnicosSorted);
+};

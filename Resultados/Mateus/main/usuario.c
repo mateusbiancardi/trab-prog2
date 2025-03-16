@@ -124,3 +124,33 @@ int calculaMediaIdadeUsuarios(Usuario **usuarios, int qntdUsuarios) {
 
   return media;
 };
+
+int comparaRankingUsuario(const void *usuario1, const void *usuario2) {
+  Usuario *u1 = *(Usuario **)usuario1;
+  Usuario *u2 = *(Usuario **)usuario2;
+
+  if (getQntdTicketsUsuario(u1) < getQntdTicketsUsuario(u2)) {
+    return 1;
+  } else if (getQntdTicketsUsuario(u1) > getQntdTicketsUsuario(u2)) {
+    return -1;
+  }
+
+  return strcmp(u1->nome, u2->nome);
+};
+
+void notificaRankingUsuario(Usuario **usuarios, int qntdUsuarios) {
+  Usuario **usuariosSorted =
+      (Usuario **)calloc(qntdUsuarios, sizeof(Usuario *));
+
+  for (int i = 0; i < qntdUsuarios; i++) {
+    usuariosSorted[i] = usuarios[i];
+  }
+
+  qsort(usuariosSorted, qntdUsuarios, sizeof(Usuario *), comparaRankingUsuario);
+
+  for (int i = 0; i < qntdUsuarios; i++) {
+    notificaUsuario(usuariosSorted[i]);
+  }
+
+  free(usuariosSorted);
+};

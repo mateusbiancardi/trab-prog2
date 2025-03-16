@@ -103,4 +103,27 @@ Data *getDataNascimentoUsuario(Usuario *u);
  */
 int calculaMediaIdadeUsuarios(Usuario **usuarios, int qntdUsuarios);
 
+/**
+ * @brief Compara dois usuários com base no ranking.
+ *
+ * Esta função compara dois usuários fornecidos com base no ranking.
+ *
+ * @param usuario1 Ponteiro para o primeiro usuário a ser comparado.
+ * @param usuario2 Ponteiro para o segundo usuário a ser comparado.
+ * @return int Retorna um valor negativo se usuario1 tiver um ranking menor que
+ * usuario2, zero se forem iguais, ou um valor positivo se usuario1 tiver um
+ * ranking maior que usuario2.
+ */
+int comparaRankingUsuario(const void *usuario1, const void *usuario2);
+
+/**
+ * @brief Notifica (imprime) o ranking dos usuários.
+ *
+ * Esta função imprime o ranking dos usuários fornecidos.
+ *
+ * @param usuarios Array de ponteiros para os usuários.
+ * @param qntdUsuarios Número de usuários no array.
+ */
+void notificaRankingUsuario(Usuario **usuarios, int qntdUsuarios);
+
 #endif

@@ -114,6 +114,20 @@ int main() {
         printf("----- BANCO DE TECNICOS -----\n");
         printaDados(tecnicos, notificaTecnico);
         printf("----------------------------\n\n");
+      } else if (strcmp(escolha2, "RANKING TECNICOS") == 0) {
+
+        printf("----- RANKING DE TECNICOS -----\n");
+        notificaRankingTecnico(retornaTodosDados(tecnicos),
+                               tamanhoDados(tecnicos));
+        printf("-------------------------------\n\n");
+
+      } else if (strcmp(escolha2, "RANKING USUARIOS") == 0) {
+
+        printf("----- RANKING DE USUARIOS -----\n");
+        notificaRankingUsuario(retornaTodosDados(usuarios),
+                               tamanhoDados(usuarios));
+        printf("-------------------------------\n\n");
+
       } else if (strcmp(escolha2, "NOTIFICA") == 0) {
 
         printf("----- FILA DE TICKETS -----\n");

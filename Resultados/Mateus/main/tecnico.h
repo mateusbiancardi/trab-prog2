@@ -135,9 +135,26 @@ void adicionaTicketTecnico(Tecnico *tec, Ticket *tic);
  * @param tecnicos Array de ponteiros para os técnicos.
  * @param qntdTecnicos Número de técnicos no array.
  * @param ticket Ponteiro para o ticket a ser distribuído.
- * @return int Índice do técnico ao qual o ticket foi atribuído.
  */
 void distribuiTicketTecnico(Tecnico **tecnicos, int qntdTecnicos,
                             Ticket *ticket);
+
+/**
+ * @brief Compara o ranking de dois técnicos.
+ *
+ * @param tecnico1 Ponteiro para o primeiro técnico.
+ * @param tecnico2 Ponteiro para o segundo técnico.
+ * @return int Resultado da comparação: negativo se tecnico1 < tecnico2, zero se
+ * tecnico1 == tecnico2, positivo se tecnico1 > tecnico2.
+ */
+int comparaRankingTecnico(const void *tecnico1, const void *tecnico2);
+
+/**
+ * @brief Notifica os técnicos sobre o ranking.
+ *
+ * @param tecnicos Array de ponteiros para os técnicos.
+ * @param qntdTecnicos Número de técnicos no array.
+ */
+void notificaRankingTecnico(Tecnico **tecnicos, int qntdTecnicos);
 
 #endif
