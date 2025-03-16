@@ -117,8 +117,8 @@
 - Genero: MASCULINO
 - Area de Atuacao: GERAL
 - Salario: 4000.00
-- Disponibilidade: 30h
-- Tempo Trabalhado: 0h
+- Disponibilidade: 24h
+- Tempo Trabalhado: 6h
 --------------------
 - Nome: AHRI COSTA
 - CPF: 234.567.890-12
@@ -127,8 +127,8 @@
 - Genero: FEMININO
 - Area de Atuacao: GERAL
 - Salario: 4800.00
-- Disponibilidade: 25h
-- Tempo Trabalhado: 0h
+- Disponibilidade: 24h
+- Tempo Trabalhado: 1h
 --------------------
 - Nome: YASUO FERREIRA
 - CPF: 345.678.901-23
@@ -137,8 +137,8 @@
 - Genero: MASCULINO
 - Area de Atuacao: TI
 - Salario: 5200.00
-- Disponibilidade: 40h
-- Tempo Trabalhado: 0h
+- Disponibilidade: 33h
+- Tempo Trabalhado: 7h
 --------------------
 - Nome: GAREN SANTOS
 - CPF: 901.234.567-89
@@ -147,8 +147,8 @@
 - Genero: MASCULINO
 - Area de Atuacao: TI
 - Salario: 4300.00
-- Disponibilidade: 22h
-- Tempo Trabalhado: 0h
+- Disponibilidade: 14h
+- Tempo Trabalhado: 8h
 ----------------------------
 
 ----- FILA DE TICKETS -----
@@ -160,7 +160,7 @@
 - Local: CORREDOR PRINCIPAL
 - Nivel de Dificuldade: 3
 - Tempo Estimado: 3h
-- Status: Aberto
+- Status: Finalizado
 -------------------------
 
 ---------TICKET-----------
@@ -171,7 +171,7 @@
 - Local: PORTARIA PRINCIPAL
 - Nivel de Dificuldade: 1
 - Tempo Estimado: 1h
-- Status: Aberto
+- Status: Finalizado
 -------------------------
 
 ---------TICKET-----------
@@ -182,7 +182,7 @@
 - Estado de conservacao: RUIM
 - Local: SALA 15 BLOCO A
 - Tempo estimado: 3h
-- Status: Aberto
+- Status: Finalizado
 -------------------------
 
 ---------TICKET-----------
@@ -194,7 +194,7 @@
 - Nível do impacto: 4
 - Motivo: EMAILS NAO ESTAO SENDO ENVIADOS
 - Tempo estimado: 7h
-- Status: Aberto
+- Status: Finalizado
 -------------------------
 
 ---------TICKET-----------
@@ -206,7 +206,7 @@
 - Nível do impacto: 5
 - Motivo: SISTEMA DE PONTO MOSTRANDO A HORA ERRADA
 - Tempo estimado: 8h
-- Status: Aberto
+- Status: Finalizado
 -------------------------
 
 ---------------------------

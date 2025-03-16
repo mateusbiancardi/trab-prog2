@@ -102,3 +102,25 @@ void notificaUsuario(void *dado) {
   printf("- Setor: %s\n", u->setor);
   printf("- Tickets solicitados: %d\n", u->qntdTickets);
 };
+
+Data *getDataNascimentoUsuario(Usuario *u) { return u->dataNasc; };
+
+int calculaMediaIdadeUsuarios(Usuario **usuarios, int qntdUsuarios) {
+  if (qntdUsuarios == 0) {
+    return 0;
+  }
+
+  int soma = 0, media;
+
+  Data *dataBase = criaData(DIA_BASE, MES_BASE, ANO_BASE);
+
+  for (int i = 0; i < qntdUsuarios; i++) {
+    soma +=
+        calcularDiffAnosData(getDataNascimentoUsuario(usuarios[i]), dataBase);
+  }
+  liberaData(dataBase);
+
+  media = soma / qntdUsuarios;
+
+  return media;
+};

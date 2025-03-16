@@ -8,17 +8,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void limpaString(char *str) {
-  int i = 0;
-  while (str[i] != '\0') {
-    i++;
-  }
-  // Remove o caractere de nova linha se presente
-  if (i > 0 && str[i - 1] == '\n') {
-    str[i - 1] = '\0';
-  }
-}
-
 int main() {
   char escolha = 'X';
   Dados *tecnicos = criaDados();
@@ -130,27 +119,41 @@ int main() {
         printf("----- FILA DE TICKETS -----\n");
         notificaFila(fila);
         printf("---------------------------\n\n");
+      } else if (strcmp(escolha2, "DISTRIBUI") == 0) {
+        int qntdTickets = getQtdTicketsNaFila(fila);
+
+        for (int i = 0; i < qntdTickets; i++) {
+          distribuiTicketTecnico(retornaTodosDados(tecnicos),
+                                 tamanhoDados(tecnicos),
+                                 getTicketNaFila(fila, i));
+        }
+
+      } else if (strcmp(escolha2, "RELATORIO") == 0) {
+
+        printf("----- RELATORIO GERAL -----\n");
+        printf("- Qtd tickets: %d\n", getQtdTicketsNaFila(fila));
+        printf("- Qtd tickets (A): %d\n",
+               getQtdTicketsPorStatusNaFila(fila, 'A'));
+        printf("- Qtd tickets (F): %d\n",
+               getQtdTicketsPorStatusNaFila(fila, 'F'));
+        printf("- Qtd usuarios: %d\n", tamanhoDados(usuarios));
+        printf("- Md idade usuarios: %d\n",
+               calculaMediaIdadeUsuarios(retornaTodosDados(usuarios),
+                                         tamanhoDados(usuarios)));
+        printf("- Qtd tecnicos: %d\n", tamanhoDados(tecnicos));
+        printf("- Md idade tecnicos: %d\n",
+               calculaMediaIdadeTecnicos(retornaTodosDados(tecnicos),
+                                         tamanhoDados(tecnicos)));
+        printf("- Md trabalho tecnicos: %d\n",
+               calculaMediaTempoTrabalhado(retornaTodosDados(tecnicos),
+                                           tamanhoDados(tecnicos)));
+        printf("---------------------------\n");
       }
     }
   }
   liberaDados(usuarios, desalocaUsuario);
-  liberaDados(tecnicos, desalocaTecnico);
   desalocaFila(fila);
+  liberaDados(tecnicos, desalocaTecnico);
 
   return 0;
 }
-
-// ----- FILA DE TICKETS -----
-// ---------TICKET-----------
-// - ID: Tick-1
-// - Usuario solicitante: 791.680.245-68
-// - Tipo: Software
-// - Nome do software: OUTLOOK
-// - Categoria: BUG
-// - Nível do impacto: 4
-// - Motivo: EMAILS NAO ESTAO SENDO ENVIADOS
-// - Tempo estimado: 7h
-// - Status: Aberto
-// -------------------------
-
-// ---------------------------

@@ -22,3 +22,9 @@ outros.c: In function ‘lerOutros’:
 outros.c:29:7: warning: unused variable ‘tempoEstimado’ [-Wunused-variable]
    29 |   int tempoEstimado;
       |       ^~~~~~~~~~~~~
+tecnico.c: In function ‘distribuiTicketTecnico’:
+tecnico.c:173:64: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+  173 |         if (strcmp(tecnicos[tecnicoIndex]->atuacao, "TI") == 0 &&
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+  174 |                 tipoTicket == 'S' ||
+      |                 ~~~~~~~~~~~~~~~~~                               

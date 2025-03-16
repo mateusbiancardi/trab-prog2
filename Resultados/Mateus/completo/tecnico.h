@@ -2,8 +2,12 @@
 #define _TECNICO_H
 
 #include "data.h"
+#include "ticket.h"
 #define MAX_TAM_NOME 100
 #define MAX_TAM_CPF 15
+#define DIA_BASE 18
+#define MES_BASE 2
+#define ANO_BASE 2025
 
 typedef struct Tecnico Tecnico;
 
@@ -82,5 +86,58 @@ void desalocaTecnico(void *dado);
  * @param t Ponteiro para o técnico a ser notificado.
  */
 void notificaTecnico(void *dado);
+
+/**
+ * @brief Obtém a data de nascimento de um técnico.
+ *
+ * @param u Ponteiro para o técnico.
+ * @return Data* Ponteiro para a data de nascimento do técnico.
+ */
+Data *getDataNascimentoTecnico(Tecnico *u);
+
+/**
+ * @brief Calcula a média de idade dos tecnicos.
+ *
+ * @param tecnicos Array de ponteiros para os tecnicos.
+ * @param qntdTecnicos Número de tecnicos no array.
+ * @return int Média de idade dos tecnicos.
+ */
+int calculaMediaIdadeTecnicos(Tecnico **tecnicos, int qntdTecnicos);
+
+/**
+ * @brief Obtém o tempo trabalhado de um técnico.
+ *
+ * @param t Ponteiro para o técnico.
+ * @return int Tempo trabalhado do técnico.
+ */
+int getTempoTrabalhado(Tecnico *t);
+
+/**
+ * @brief Calcula a média de tempo trabalhado dos técnicos.
+ *
+ * @param tecnicos Array de ponteiros para os técnicos.
+ * @param qntdTecnicos Número de técnicos no array.
+ * @return int Média de tempo trabalhado dos técnicos.
+ */
+int calculaMediaTempoTrabalhado(Tecnico **tecnicos, int qntdTecnicos);
+
+/**
+ * @brief Adiciona um ticket ao técnico.
+ *
+ * @param tec Ponteiro para o técnico.
+ * @param tic Ponteiro para o ticket a ser adicionado.
+ */
+void adicionaTicketTecnico(Tecnico *tec, Ticket *tic);
+
+/**
+ * @brief Distribui um ticket entre os técnicos disponíveis.
+ *
+ * @param tecnicos Array de ponteiros para os técnicos.
+ * @param qntdTecnicos Número de técnicos no array.
+ * @param ticket Ponteiro para o ticket a ser distribuído.
+ * @return int Índice do técnico ao qual o ticket foi atribuído.
+ */
+void distribuiTicketTecnico(Tecnico **tecnicos, int qntdTecnicos,
+                            Ticket *ticket);
 
 #endif

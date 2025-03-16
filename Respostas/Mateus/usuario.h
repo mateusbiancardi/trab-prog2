@@ -4,6 +4,9 @@
 #include "data.h"
 #define MAX_TAM_NOME 100
 #define MAX_TAM_CPF 15
+#define DIA_BASE 18
+#define MES_BASE 2
+#define ANO_BASE 2025
 
 typedef struct Usuario Usuario;
 
@@ -82,5 +85,22 @@ char *getSetor(Usuario *u);
  * @return int Quantidade de tickets do usuário.
  */
 int getQntdTicketsUsuario(Usuario *u);
+
+/**
+ * @brief Obtém a data de nascimento de um usuário.
+ *
+ * @param u Ponteiro para o usuário.
+ * @return Data* Ponteiro para a data de nascimento do usuário.
+ */
+Data *getDataNascimentoUsuario(Usuario *u);
+
+/**
+ * @brief Calcula a média de idade dos usuários.
+ *
+ * @param usuarios Array de ponteiros para os usuários.
+ * @param qntdUsuarios Número de usuários no array.
+ * @return int Média de idade dos usuários.
+ */
+int calculaMediaIdadeUsuarios(Usuario **usuarios, int qntdUsuarios);
 
 #endif

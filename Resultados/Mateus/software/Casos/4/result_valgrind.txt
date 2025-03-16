@@ -1,15 +1,15 @@
-==290716== Memcheck, a memory error detector
-==290716== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
-==290716== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
-==290716== Command: Resultados/Mateus/software/prog Resultados/Mateus/software/Casos/4
-==290716== Parent PID: 290715
-==290716== 
-==290716== 
-==290716== HEAP SUMMARY:
-==290716==     in use at exit: 0 bytes in 0 blocks
-==290716==   total heap usage: 58 allocs, 58 frees, 13,320 bytes allocated
-==290716== 
-==290716== All heap blocks were freed -- no leaks are possible
-==290716== 
-==290716== For lists of detected and suppressed errors, rerun with: -s
-==290716== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==46952== Memcheck, a memory error detector
+==46952== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==46952== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==46952== Command: Resultados/Mateus/software/prog Resultados/Mateus/software/Casos/4
+==46952== Parent PID: 46951
+==46952== 
+==46952== 
+==46952== HEAP SUMMARY:
+==46952==     in use at exit: 0 bytes in 0 blocks
+==46952==   total heap usage: 58 allocs, 58 frees, 13,320 bytes allocated
+==46952== 
+==46952== All heap blocks were freed -- no leaks are possible
+==46952== 
+==46952== For lists of detected and suppressed errors, rerun with: -s
+==46952== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

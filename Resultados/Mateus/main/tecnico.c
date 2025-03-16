@@ -24,7 +24,7 @@ Tecnico *criaTecnico(char *nome, char *cpf, Data *dataNasc, char *telefone,
                      char *genero, char *atuacao, float salario,
                      int disponibilidade) {
   Tecnico *t = (Tecnico *)calloc(1, sizeof(Tecnico));
-  t->tickets = (Ticket **)calloc(1, sizeof(Ticket *));
+  t->tickets = NULL;
 
   strcpy(t->nome, nome);
   strcpy(t->cpf, cpf);
@@ -85,9 +85,6 @@ int getQntdTicketsTecnico(Tecnico *t) { return t->qntdTickets; };
 void desalocaTecnico(void *dado) {
   Tecnico *t = (Tecnico *)dado;
 
-  for (int i = 0; i < t->qntdTickets; i++) {
-    desalocaTicket(t->tickets[i]);
-  }
   free(t->tickets);
   liberaData(t->dataNasc);
   free(t);
@@ -107,4 +104,82 @@ void notificaTecnico(void *dado) {
   printf("- Salario: %.2f\n", t->salario);
   printf("- Disponibilidade: %dh\n", t->disponibilidade);
   printf("- Tempo Trabalhado: %dh\n", t->tempoTrabalhado);
+};
+
+Data *getDataNascimentoTecnico(Tecnico *t) { return t->dataNasc; };
+
+int calculaMediaIdadeTecnicos(Tecnico **tecnicos, int qntdTecnicos) {
+  if (qntdTecnicos == 0) {
+    return 0;
+  }
+
+  int soma = 0, media;
+
+  Data *dataBase = criaData(DIA_BASE, MES_BASE, ANO_BASE);
+
+  for (int i = 0; i < qntdTecnicos; i++) {
+    soma +=
+        calcularDiffAnosData(getDataNascimentoTecnico(tecnicos[i]), dataBase);
+  }
+  liberaData(dataBase);
+
+  media = soma / qntdTecnicos;
+
+  return media;
+};
+
+int getTempoTrabalhado(Tecnico *t) { return t->tempoTrabalhado; };
+
+int calculaMediaTempoTrabalhado(Tecnico **tecnicos, int qntdTecnicos) {
+  if (qntdTecnicos == 0) {
+    return 0;
+  }
+
+  int soma = 0, media;
+
+  for (int i = 0; i < qntdTecnicos; i++) {
+    soma += getTempoTrabalhado(tecnicos[i]);
+  }
+
+  media = soma / qntdTecnicos;
+
+  return media;
+};
+
+void adicionaTicketTecnico(Tecnico *tec, Ticket *tic) {
+  tec->tickets = (Ticket **)realloc(tec->tickets,
+                                    (tec->qntdTickets + 1) * sizeof(Ticket *));
+
+  tec->tickets[tec->qntdTickets] = tic;
+  tec->qntdTickets++;
+
+  int tempoEstimado = getTempoEstimadoTicket(tic);
+  tec->disponibilidade -= tempoEstimado;
+  tec->tempoTrabalhado += tempoEstimado;
+};
+
+void distribuiTicketTecnico(Tecnico **tecnicos, int qntdTecnicos,
+                            Ticket *ticket) {
+  static int indiceTecnico = 0;
+
+  if (getStatusTicket(ticket) == 'A') {
+    char tipoTicket = getTipoTicket(ticket);
+    int tempoEstimado = getTempoEstimadoTicket(ticket);
+
+    for (int i = 0; i < qntdTecnicos; i++) {
+      int tecnicoIndex = (indiceTecnico + i) % qntdTecnicos;
+
+      if (tempoEstimado <= tecnicos[tecnicoIndex]->disponibilidade) {
+        if (strcmp(tecnicos[tecnicoIndex]->atuacao, "TI") == 0 &&
+                tipoTicket == 'S' ||
+            strcmp(tecnicos[tecnicoIndex]->atuacao, "GERAL") == 0 &&
+                tipoTicket != 'S') {
+          adicionaTicketTecnico(tecnicos[tecnicoIndex], ticket);
+          finalizaTicket(ticket);
+          indiceTecnico = (tecnicoIndex + 1) % qntdTecnicos;
+          break;
+        }
+      }
+    }
+  }
 };

@@ -26,7 +26,7 @@
 - Local: PASSARELA DA INFORMATICA
 - Nivel de Dificuldade: 5
 - Tempo Estimado: 5h
-- Status: Aberto
+- Status: Finalizado
 -------------------------
 ---------TICKET-----------
 - ID: Tick-2
@@ -36,7 +36,7 @@
 - Local: TETO DO CT-7
 - Nivel de Dificuldade: 5
 - Tempo Estimado: 5h
-- Status: Aberto
+- Status: Finalizado
 -------------------------
 ---------TICKET-----------
 - ID: Tick-3
@@ -46,7 +46,7 @@
 - Estado de conservacao: RUIM
 - Local: SALA 22 CT-7
 - Tempo estimado: 6h
-- Status: Aberto
+- Status: Finalizado
 -------------------------
 ---------TICKET-----------
 - ID: Tick-4
@@ -57,7 +57,17 @@
 - Nível do impacto: 2
 - Motivo: NAO CONSIGO ORDENAR COLUNA DE DADOS
 - Tempo estimado: 3h
-- Status: Aberto
+- Status: Finalizado
 -------------------------
 ---------------------------
 
+----- RELATORIO GERAL -----
+- Qtd tickets: 4
+- Qtd tickets (A): 0
+- Qtd tickets (F): 4
+- Qtd usuarios: 4
+- Md idade usuarios: 39
+- Qtd tecnicos: 3
+- Md idade tecnicos: 49
+- Md trabalho tecnicos: 6
+---------------------------
