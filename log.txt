@@ -64,6 +64,8 @@ COPIANDO OS ARQUIVOS PARA A PASTA DE RESULTADO DO ALUNO:
  - Copiando Respostas/Mateus/dados.c para Resultados/Mateus/completo
  - Copiando Respostas/Mateus/data.c para Resultados/Mateus/main
  - Copiando Respostas/Mateus/data.c para Resultados/Mateus/completo
+ - Copiando Respostas/Mateus/gerenciador.c para Resultados/Mateus/main
+ - Copiando Respostas/Mateus/gerenciador.c para Resultados/Mateus/completo
  - Copiando Respostas/Mateus/manutencao.c para Resultados/Mateus/main
  - Copiando Respostas/Mateus/manutencao.c para Resultados/Mateus/completo
  - Copiando Respostas/Mateus/outros.c para Resultados/Mateus/main
@@ -76,6 +78,8 @@ COPIANDO OS ARQUIVOS PARA A PASTA DE RESULTADO DO ALUNO:
  - Copiando Respostas/Mateus/dados.h para Resultados/Mateus/completo
  - Copiando Respostas/Mateus/data.h para Resultados/Mateus/main
  - Copiando Respostas/Mateus/data.h para Resultados/Mateus/completo
+ - Copiando Respostas/Mateus/gerenciador.h para Resultados/Mateus/main
+ - Copiando Respostas/Mateus/gerenciador.h para Resultados/Mateus/completo
  - Copiando Respostas/Mateus/manutencao.h para Resultados/Mateus/main
  - Copiando Respostas/Mateus/manutencao.h para Resultados/Mateus/completo
  - Copiando Respostas/Mateus/outros.h para Resultados/Mateus/main

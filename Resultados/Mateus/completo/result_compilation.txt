@@ -2,11 +2,11 @@ data.c: In function ‘calcularDiffAnosData’:
 data.c:37:31: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
    37 |       fim->mes == inicio->mes && fim->dia < inicio->dia) {
       |       ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from main.c:4:
+In file included from gerenciador.c:4:
 outros.h:5: warning: "MAX_TAM_LOCAL" redefined
     5 | #define MAX_TAM_LOCAL 25
       | 
-In file included from main.c:3:
+In file included from gerenciador.c:3:
 manutencao.h:5: note: this is the location of the previous definition
     5 | #define MAX_TAM_LOCAL 100
       | 
